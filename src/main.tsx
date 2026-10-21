@@ -6,7 +6,8 @@ import App from './App';
 
 createRoot(document.getElementById('root')!).render(
   <ModusWcThemeProvider>
-    <BrowserRouter>
+    {/* Add basename here so React Router handles the GitHub Pages subfolder */}
+    <BrowserRouter basename="/Trimble-Hardware-Store">
       <App />
     </BrowserRouter>
   </ModusWcThemeProvider>
