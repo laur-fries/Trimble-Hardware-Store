@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="modus-modern-light" data-mode="light" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trimble Hardware Store — Hardware solutions for every jobsite</title>
+    <meta
+      name="description"
+      content="Shop pre-filtered hardware built for your trade. Browse the Trimble Hardware Store catalog for civil, commercial, and building construction equipment."
+    />
+
+    <!-- Theme bootstrap before first paint (system default) -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark =
+            window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var mode = stored || 'system';
+          var resolved =
+            mode === 'system' ? (prefersDark ? 'dark' : 'light') : mode;
+          var theme =
+            resolved === 'dark' ? 'modus-modern-dark' : 'modus-modern-light';
+          var html = document.documentElement;
+          html.setAttribute('data-theme', theme);
+          html.setAttribute('data-mode', mode);
+          html.classList.remove('light', 'dark');
+          html.classList.add(resolved);
+          localStorage.setItem(
+            'modus-theme-config',
+            JSON.stringify({ theme: theme })
+          );
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Open Sans for body/app text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Modus Icons font -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/@trimble-oss/modus-icons@1/dist/modus-outlined/fonts/modus-icons.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/modus-web-components/modus-icons.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
